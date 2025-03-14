@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message for You</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dancing Script', cursive;
+            background-color: #f9f3d3;
+            overflow: hidden;
+        }
+
+        /* Page 1: Welcome Page */
+        .welcome-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            background-color: #fff7e6;
+        }
+
+        .welcome-page h1 {
+            font-size: 4rem;
+            color: #ff6f61;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .welcome-page img {
+            width: 200px;
+            margin-bottom: 40px;
+        }
+
+        .welcome-page button {
+            padding: 10px 20px;
+            font-size: 1.4rem;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .welcome-page button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Page 2: Birthday Wish Page */
+        .birthday-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffcccb, #fff7e6);
+            position: relative;
+            overflow: hidden;
+        }
+        .birthday-page h2 {
+        font-size: 2rem;
+        color: #ff6f61;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        }
+        .birthday-page p {
+        font-size: 2rem;
+        color: #ff6f61;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 3s linear infinite;
+        }
+
+        .firework {
+            position: absolute;
+            font-size: 3rem;
+            animation: explode 1.5s linear infinite;
+        }
+
+        .birthday-message {
+            font-size: 4rem;
+            color: #8b008b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin: 40px;
+        }
+        .birthday-page button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .birthday-page button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Page 3: Shayari Page */
+        .shayari-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(to top, #ffcccb, #fff7e6);
+        }
+
+        .shayari-page h2 {
+            font-size: 2rem;
+            color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .shayari-page p {
+            font-size: 1.4rem;
+            color: #635D5B;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Hidden Pages */
+        .hidden {
+            display: none;
+        }
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        @keyframes confetti {
+            0% { transform: rotate(0deg) translateY(0); }
+            100% { transform: rotate(360deg) translateY(-800vh); }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Page 1: Welcome Page -->
+    <div class="welcome-page" id="welcomePage">
+        <h1>🙇 Pranam Devatha 🙇</h1>
+        <button onclick="showBirthdayPage()">Enlighten Your Phone Screen By Touching Here </button>
+    </div>
+
+    <!-- Page 2: Birthday Wish Page -->
+    <div class="birthday-page hidden" id="birthdayPage">
+        <!-- Balloons -->
+        <div class="balloon" style="left: 10%; top: 20%;">🎈</div>
+        <div class="balloon" style="right: 15%; top: 10%;">🎈</div>
+        <div class="balloon" style="left: 45%; top: 5%;">🎈</div>
+        <div class="balloon" style="left: 45%; bottom: 5%;">🎈</div>
+        <div class="balloon" style="right: 15%; bottom: 10%;">🎈</div>
+        <div class="balloon" style="left: 10%; bottom: 20%;">🎈</div>
+        <div class="firework" style="left: 40%; bottom: 15%;">✨</div>
+        <div class="firework" style="right: 50%; top: 15%;">🎇</div>
+
+        <h2>Happy Birthday, Devatha!</h2>
+        <p>🎉🎂 Wishing you a day filled with love, joy, and endless happiness! 💖🎁</p>
+        <button onclick="showShayariPage()">Enlighten The Button With Your Gentle & Smooth Touch</button>
+    </div>
+
+    <!-- Page 3: Shayari Page -->
+    <div class="shayari-page hidden" id="shayariPage">
+        <h2>Some Special Lines for You</h2>
+        <p>
+            God bless the dinosaur that died to make the fossil fuel,<br>
+            that was treated to become petrol in the car<br>
+            that took your Mom to hospital<br>
+            to give birth to you.
+        </p>
+        <h2>Another One for You</h2>
+        <p>
+            "Black Hole" is the second strongest gravitional pull<br>
+            in the Universe,<br>
+            First is still 'Your Eyes'.<br>
+        </p>
+    </div>
+
+    <script>
+        // Function to show the Birthday Page
+        function showBirthdayPage() {
+            document.getElementById('welcomePage').classList.add('hidden');
+            document.getElementById('birthdayPage').classList.remove('hidden');
+        }
+
+        // Function to show the Shayari Page
+        function showShayariPage() {
+            document.getElementById('birthdayPage').classList.add('hidden');
+            document.getElementById('shayariPage').classList.remove('hidden');
+        }
+        // Add floating confetti effect
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.style.position = 'fixed';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animation = 'confetti 12s linear infinite';
+            confetti.innerHTML = '🎉';
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 6000);
+        }
+
+        setInterval(createConfetti, 200);
+    </script>
+</body>
+</html>
